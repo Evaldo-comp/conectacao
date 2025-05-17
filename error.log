@@ -1,0 +1,53 @@
+warning: Git tree '/usr/local/monospace/templates/_bundle_unpacker' is dirty
+these 6 derivations will be built:
+  /nix/store/frkscpvs3h8iggrq1l00a2bh1z84p5xn-idx-template.drv
+  /nix/store/r1g97pfblqkssrarpkj6dcwmj6sv8ig5-sandbox-files.drv
+  /nix/store/v5ii659s2cc5c5dfxp1ys60svzxkv6hi-builder.pl.drv
+  /nix/store/kfhjcpwn5xapyhn5dx19q4j0f36fjfzf-sandbox.drv
+  /nix/store/b2acb41s4nn86cjrwrq6nsg21w9l3r8l-usr-env.drv
+  /nix/store/7khwvfrxhn07pqndwy803mqngry9zahg-idx-template.drv
+these 7 paths will be fetched (11.82 MiB download, 108.48 MiB unpacked):
+  /nix/store/1jnl0g7a6fcc7ma4f4kg77arpz84ifzf-ShellCheck-0.9.0
+  /nix/store/wam6939g2ch4aj6g30nfcsfm9lchmmjy-bash-5.2-p15-man
+  /nix/store/rwrw7zjjw884w3myrjnhf78dq3zrmgsf-gnu-config-2023-09-19
+  /nix/store/72ww6m5915nw48q1nlij1i0pkr363zcb-stdenv-linux
+  /nix/store/x78if997ckjnsbs524iyvajvz607hqkv-ts-node-10.9.1
+  /nix/store/26vvnzfjg860ny4s7s1af38nskpfyps1-typescript-5.2.2
+  /nix/store/a4la4kzmq9kwqc71kf9lksx15pcq8wbg-update-autotools-gnu-config-scripts-hook
+copying path '/nix/store/1jnl0g7a6fcc7ma4f4kg77arpz84ifzf-ShellCheck-0.9.0' from 'https://cache.nixos.org' to 'local-overlay://'...
+copying path '/nix/store/rwrw7zjjw884w3myrjnhf78dq3zrmgsf-gnu-config-2023-09-19' from 'https://cache.nixos.org' to 'local-overlay://'...
+copying path '/nix/store/wam6939g2ch4aj6g30nfcsfm9lchmmjy-bash-5.2-p15-man' from 'https://cache.nixos.org' to 'local-overlay://'...
+copying path '/nix/store/26vvnzfjg860ny4s7s1af38nskpfyps1-typescript-5.2.2' from 'https://cache.nixos.org' to 'local-overlay://'...
+copying path '/nix/store/a4la4kzmq9kwqc71kf9lksx15pcq8wbg-update-autotools-gnu-config-scripts-hook' from 'https://cache.nixos.org' to 'local-overlay://'...
+copying path '/nix/store/72ww6m5915nw48q1nlij1i0pkr363zcb-stdenv-linux' from 'https://cache.nixos.org' to 'local-overlay://'...
+building '/nix/store/v5ii659s2cc5c5dfxp1ys60svzxkv6hi-builder.pl.drv'...
+copying path '/nix/store/x78if997ckjnsbs524iyvajvz607hqkv-ts-node-10.9.1' from 'https://cache.nixos.org' to 'local-overlay://'...
+building '/nix/store/r1g97pfblqkssrarpkj6dcwmj6sv8ig5-sandbox-files.drv'...
+building '/nix/store/frkscpvs3h8iggrq1l00a2bh1z84p5xn-idx-template.drv'...
+building '/nix/store/kfhjcpwn5xapyhn5dx19q4j0f36fjfzf-sandbox.drv'...
+created 342 symlinks in user environment
+building '/nix/store/b2acb41s4nn86cjrwrq6nsg21w9l3r8l-usr-env.drv'...
+/nix/store/zsmwrnpnrmmwyvd4vakq4172dzarv33j-usr-env /build
+/nix/store/zsmwrnpnrmmwyvd4vakq4172dzarv33j-usr-env/usr /nix/store/zsmwrnpnrmmwyvd4vakq4172dzarv33j-usr-env /build
+/nix/store/zsmwrnpnrmmwyvd4vakq4172dzarv33j-usr-env /build
+building '/nix/store/7khwvfrxhn07pqndwy803mqngry9zahg-idx-template.drv'...
+Fetching bundle...
+/nix/store/xgwxrvqys5dpaq7kqyb76nsrvh6f683c-85krq5mqx5fgpdpibjiiy4v9ny326jhp-source [
+  'README.md',
+  'dev.nix',
+  'idx-template.json',
+  'idx-template.nix',
+  'unpacker.ts'
+]
+Unpacking bundle using environment: flutter...
+Error: EACCES: permission denied, open '/out/conectacao/.idx/dev.nix'
+    at Object.openSync (node:fs:596:3)
+    at Object.writeFileSync (node:fs:2322:35)
+    at instantiateFlutter (/nix/store/li9xwb13ccv6i8kjnqzg03jfzs9x0m8h-unpacker.ts:63:6)
+    at main (/nix/store/li9xwb13ccv6i8kjnqzg03jfzs9x0m8h-unpacker.ts:44:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  errno: -13,
+  syscall: 'open',
+  code: 'EACCES',
+  path: '/out/conectacao/.idx/dev.nix'
+}
