@@ -21,19 +21,7 @@ class OngCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ong.imagem.isEmpty
-                  ? Image.asset(
-                      'assets/images/sonic.png',
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    )
-                  :Image.asset(
-                      'assets/images/sonic.png',
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    ),
+             
               const SizedBox(height: 10),
               Text(
                 ong.nome,

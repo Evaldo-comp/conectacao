@@ -64,6 +64,11 @@ flutter:
 
   assets:
     - assets/images/sonic.png
+    - assets/images/logo.jpeg
+    - assets/icons/site.jpg
+    - assets/icons/email.png
+    - assets/icons/insta.png
+    - assets/images/gplogo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
