@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'screens/home_page.dart';
 import 'screens/SobreNosPage.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const OngApp());
 }
-
-// Adicione também a nova tela ao final do arquivo:
-
 
 class OngApp extends StatelessWidget {
   const OngApp({super.key});
@@ -34,6 +31,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Altere a cor de fundo aqui
+      backgroundColor: const Color(0xFFFEFFD7),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
@@ -50,7 +49,7 @@ class SplashScreen extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(32),
                     child: Image.asset(
-                      'assets/images/logo.jpeg',
+                      'assets/images/logo.png', // Use um PNG com fundo transparente
                       width: 220,
                       height: 220,
                       fit: BoxFit.cover,
@@ -107,7 +106,7 @@ class SplashScreen extends StatelessWidget {
               const Text(
                 'Projeto FECTEC Maria Carmem 2025',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.normal,
                   fontSize: 12,
                 ),

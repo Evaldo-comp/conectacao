@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'ONGs Ambientais',
-          style: TextStyle(color: Color.fromARGB(255, 225, 212, 164)),
+          style: TextStyle(color: Color.fromARGB(255, 252, 252, 252)),
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                             color: Colors.green[700], // Mesma cor do retângulo
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black12,
+                                color: const Color.fromARGB(214, 16, 16, 16),
                                 blurRadius: 8,
                                 offset: Offset(2, 2),
                               ),
@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: const Color.fromARGB(253, 17, 98, 27),
                                   blurRadius: 8,
                                   offset: Offset(2, 2),
                                 ),

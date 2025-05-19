@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../model/ong.dart';
 
 class OngDetailPage extends StatelessWidget {
@@ -6,8 +7,24 @@ class OngDetailPage extends StatelessWidget {
 
   const OngDetailPage({super.key, required this.ong});
 
+  // Função utilitária para abrir links
+  void _launchUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    // Defina os links individualmente aqui:
+    final String siteUrlZoe =
+        'https://seusite.com'; // Coloque o link do site da ONG
+    final String emailUrlZoe =
+        'mailto:seuemail@dominio.com'; // Coloque o email da ONG
+    final String instagramUrlZoe =
+        'https://www.instagram.com/ongzoe.oficial/'; // Coloque o link do Instagram da ONG
+
     return Scaffold(
       backgroundColor: Colors.green[800],
       appBar: AppBar(title: Text(ong.nome), backgroundColor: Colors.green[900]),
@@ -34,10 +51,7 @@ class OngDetailPage extends StatelessWidget {
                     ],
                   ),
                   child: ClipOval(
-                    child: Image.asset(
-                      ong.logoPath,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image.asset(ong.logoPath, fit: BoxFit.cover),
                   ),
                 ),
               ),
@@ -124,62 +138,98 @@ class OngDetailPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Campo 1: Site
-                        Container(
-                          width: 48,
-                          height: 48,
-                          margin: const EdgeInsets.only(right: 16),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: Colors.green, width: 1.5),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              ong.siteIcon,
-                              width: 28,
-                              height: 28,
+                        // Ícone do site
+                        GestureDetector(
+                          onTap: () {
+                            final site = ong.contato['site'];
+                            if (site != null && site.isNotEmpty) {
+                              _launchUrl(site);
+                            }
+                          },
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            margin: const EdgeInsets.only(right: 16),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: Colors.green,
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/icons/site.jpg',
+                                width: 28,
+                                height: 28,
+                              ),
                             ),
                           ),
                         ),
-                        // Campo 2: Email
-                        Container(
-                          width: 48,
-                          height: 48,
-                          margin: const EdgeInsets.only(right: 16),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: Colors.green, width: 1.5),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              ong.emailIcon,
-                              width: 28,
-                              height: 28,
+                        // Ícone do email
+                        GestureDetector(
+                          onTap: () {
+                            final email = ong.contato['email'];
+                            if (email != null && email.isNotEmpty) {
+                              _launchUrl('mailto:$email');
+                            }
+                          },
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            margin: const EdgeInsets.only(right: 16),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: Colors.green,
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/icons/email.png',
+                                width: 28,
+                                height: 28,
+                              ),
                             ),
                           ),
                         ),
-                        // Campo 3: Instagram
-                        Container(
-                          width: 48,
-                          height: 48,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: Colors.green, width: 1.5),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              ong.instaIcon,
-                              width: 28,
-                              height: 28,
+                        // Ícone do Instagram
+                        GestureDetector(
+                          onTap: () {
+                            final insta = ong.contato['instagram'];
+                            if (insta != null && insta.isNotEmpty) {
+                              final url =
+                                  insta.startsWith('http')
+                                      ? insta
+                                      : 'https://instagram.com/${insta.replaceAll('@', '')}';
+                              _launchUrl(url);
+                            }
+                          },
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: Colors.green,
+                                width: 1.5,
+                              ),
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                'assets/icons/insta.png',
+                                width: 28,
+                                height: 28,
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    // Adicione aqui outros detalhes de contato se desejar
                   ],
                 ),
               ),

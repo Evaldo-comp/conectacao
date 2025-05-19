@@ -28,12 +28,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  url_launcher: ^6.2.5
   flutter:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+
 
 dev_dependencies:
   flutter_test:
@@ -64,12 +66,15 @@ flutter:
 
   assets:
     - assets/images/sonic.png
-    - assets/images/logo.jpeg
+    - assets/images/logo.png
     - assets/icons/site.jpg
     - assets/icons/email.png
     - assets/icons/insta.png
     - assets/images/gplogo.jpg
-
+    - assets/images/wwf.jpg
+    - assets/images/zoe.png
+    - assets/images/terra.jpg
+  
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
